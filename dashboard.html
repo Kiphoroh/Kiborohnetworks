@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PHORONETWORKS</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <p>Welcome, {{ user.phone }}</p>
+    <p>Your unique referral code: {{ user.unique_code }}</p>
+    <p>Current balance: KES {{ user.balance }}</p>
+    <h2>Your Referrals</h2>
+    <ul>
+    {% for referral in referrals %}
+        <li>{{ referral.phone }} - KES {{ referral.balance }}</li>
+    {% endfor %}
+    </ul>
+    <a href="/logout">Logout</a>
+</body>
+</html>

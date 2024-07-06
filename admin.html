@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - PHORONETWORKS</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <form method="post">
+        <label for="phone">Phone Number to Confirm:</label><br>
+        <input type="text" id="phone" name="phone" required><br>
+        <button type="submit">Confirm</button>
+    </form>
+    <h2>All Users</h2>
+    <ul>
+    {% for user in users %}
+        <li>{{ user.phone }} - Active: {{ user.is_active }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
